@@ -61,6 +61,7 @@ conn.sftp((err, sftp) => {
 MIT License
 
 Copyright (c) 2016 Brian Kurtz
+
 Based on ssh2 - Copyright Brian White. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
