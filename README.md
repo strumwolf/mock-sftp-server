@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/strumwolf/mock-sftp-server.svg?branch=master)](https://travis-ci.org/strumwolf/mock-sftp-server)
+
 # Description
 **mock-sftp-server** uses [ssh2's](https://www.npmjs.com/package/ssh2) server functionality to make a test sftp server for unit testing. This module will not act like a real sftp server and should only be used to test against.
 
