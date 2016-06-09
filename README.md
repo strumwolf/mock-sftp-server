@@ -1,5 +1,5 @@
 # Description
-**mock-sftp-server** uses [ssh2's](https://www.npmjs.com/package/ssh2) server functionality to make a test sftp server for unit testing. This module will not act like and should only be used to test against.
+**mock-sftp-server** uses [ssh2's](https://www.npmjs.com/package/ssh2) server functionality to make a test sftp server for unit testing. This module will not act like a real sftp server and should only be used to test against.
 
 This is a work in progress and not all sftp functionlity has been added to the wrapper.
 
