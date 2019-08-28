@@ -1,6 +1,6 @@
 {
   "name": "mock-sftp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Creates mock sftp server using ssh2 for unit testing",
   "main": "sftpServer.js",
   "scripts": {
