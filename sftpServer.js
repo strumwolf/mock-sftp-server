@@ -39,13 +39,13 @@ exports.sftpServer = (opts, fn) => {
           let calledReadDir = false;
           sftpStream.on('OPENDIR', (reqid, path) => {
             debug(path);
-            const handle = new Buffer(path);
+            const handle = Buffer.from(path);
             debug(handle);
             sftpStream.handle(reqid, handle);
           });
           sftpStream.on('OPEN', (reqid, filename, flags, attrs) => {
             debug('Open');
-            const handle = new Buffer(4);
+            const handle = Buffer.alloc(4);
             openFiles[handleCount] = true;
             handle.writeUInt32BE(handleCount++, 0, true);
             sftpStream.handle(reqid, handle);

@@ -30,16 +30,22 @@ const debug = false;
 const port = 4000;
 
 describe('Mock SFTP Server', () => {
+  let  mockServer;
   const client = new Client();
   let sftp;
 
   before(done => {
-    SFTP.sftpServer({ listing, debug, port }, done);
+    mockServer = SFTP.sftpServer({ listing, debug, port }, done);
   });
 
   after(done => {
     client.end();
-    done();
+    mockServer.close((err) => {
+      if (err) {
+        console.error("mock server closed:", err);
+      }
+      done();
+    });
   });
 
   describe('Connection to mock server', () => {
@@ -91,7 +97,7 @@ describe('Mock SFTP Server', () => {
   });
 
   describe('fastPut', () => {
-    it('should uploade file without error', done => {
+    it('should upload file without error', done => {
       sftp.fastPut(`${process.cwd()}/test/fixtures/bar`, '/foo', err => {
         expect(err).to.not.exist;
         done();
